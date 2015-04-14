@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface WWSudokuCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UILabel *textLabel;
+
+@property (strong, nonatomic) NSString *text;
 
 @end

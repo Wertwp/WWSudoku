@@ -59,7 +59,8 @@ static NSString * const reuseIdentifier = @"WWSudokuCell";
     WWSudokuCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
-    
+    int value = arc4random() % 100;
+    cell.text = [NSString stringWithFormat:@"%d",value];
     return cell;
 }
 
@@ -90,7 +91,8 @@ static NSString * const reuseIdentifier = @"WWSudokuCell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    WWSudokuCell *cell = (WWSudokuCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    NSLog(@"------------%@", cell.text);
     cell.backgroundColor = [UIColor blackColor];
 }
 

@@ -30,4 +30,11 @@
     return self;
 }
 
+- (void)layoutSubviews
+{
+    if (self.text) {
+        self.textLabel.text = self.text;
+    }
+}
+
 @end
